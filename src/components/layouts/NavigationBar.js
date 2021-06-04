@@ -11,7 +11,7 @@ const NavigationBar = () => {
             <Header>
                 <Nav>
                     <NavText>
-                        Some text
+                        Random Color Picker
                     </NavText>
                 </Nav>
             </Header>
