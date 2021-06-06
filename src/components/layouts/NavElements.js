@@ -4,7 +4,8 @@ export const Header = styled.header`
     position: relative;
     display: flex;
     align-items: center;
-    padding: 0.75rem 0;
+    // padding: 0.75rem 0;
+    min-height: 10vh;
     // background-color: #7952b3;
 `;
 

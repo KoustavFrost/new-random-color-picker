@@ -1,23 +1,39 @@
 import React from 'react';
 
+// Importing other packages
+import {
+    Row
+} from 'react-bootstrap';
+import {
+    ToastContainer,
+    toast
+} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+// Importing the syled components
 import {
     ButtonTypeOne,
     ColorIdDiv,
     MainDiv
 } from './ShowColorElements';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
 import NavigationBar from '../layouts/NavigationBar';
+import FooterBar from '../layouts/FooterBar';
 
 // Inline styles
-const childDiv = {
-    position: 'absolute',
-    marginLeft: '-50px',
-    left: '100vh',
-    width: '6.25rem',
-    bottom: '5rem'
+const div2 = {
+    minHeight: '40vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
 };
+const div3 = {
+    minHeight: '40vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+};
+const div4 = { minHeight: '10vh' };
 
 class ShowColor extends React.Component {
     constructor(props) {
@@ -71,12 +87,18 @@ class ShowColor extends React.Component {
         return (
             <>
                 <MainDiv backgroundColor={this.state.colorHex}>
-                    <NavigationBar />
                     <ToastContainer />
-                    <ColorIdDiv>{this.state.colorHex}</ColorIdDiv>
-                    <div style={childDiv}>
+                    <NavigationBar />
+                    <Row style={div2}>
+                        <ColorIdDiv>{this.state.colorHex}</ColorIdDiv>
+                    </Row>
+                    <Row style={div3}>
                         <ButtonTypeOne onClick={this.randomiseColor}>Randomize</ButtonTypeOne>
-                    </div>
+                    </Row>
+                    <Row style={div4}>
+                        {/* Here goes the footer */}
+                        <FooterBar />
+                    </Row>
                 </MainDiv>
             </>
         );
